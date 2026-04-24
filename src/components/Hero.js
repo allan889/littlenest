@@ -6,58 +6,61 @@ const Hero = () => {
         <Box
             sx={{
                 position: "relative",
-                height: "90vh",
                 width: "100%",
-                overflow: "hidden",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                color: "white",
-                textAlign: "center",
+                // We remove fixed heights and aspect ratios. 
+                // The height is now determined by the video inside it.
+                bgcolor: "black",
             }}
         >
-            {/* VIDEO */}
-            <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                style={{
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                    zIndex: -1,
-                }}
-            >
-                <source src="/firstvideo.mp4" type="video/mp4" />
-            </video>
-
-            {/* OVERLAY */}
+            {/* VIDEO CONTAINER */}
             <Box
                 sx={{
-                    position: "absolute",
-                    inset: 0,
-                    backgroundColor: "rgba(0,0,0,0.4)",
-                    zIndex: 0,
+                    p: { xs: 2, md: 3 }, // Your outer padding
                 }}
-            />
+            >
+                <Box
+                    sx={{
+                        position: "relative",
+                        width: "100%",
+                        borderRadius: "20px",
+                        overflow: "hidden",
+                        lineHeight: 0, // 👈 Critical: Removes tiny gap at bottom of inline elements
+                    }}
+                >
+                    {/* VIDEO: No longer absolute, so it pushes the container open */}
+                    <Box
+                        component="video"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        sx={{
+                            width: "100%",
+                            height: "auto", // 👈 Naturally scale height based on width
+                            display: "block",
+                        }}
+                    >
+                        <source src="/firstvideo.mp4" type="video/mp4" />
+                    </Box>
 
-            {/* CONTENT */}
-            <Box sx={{ zIndex: 1, p: 3 }}>
-                <Typography variant="h2" fontWeight="bold">
-                    Little Nest Hotel and Restaurant
-                </Typography>
+                    {/* OVERLAY: Stretches to match the video size */}
+                    <Box
+                        sx={{
+                            position: "absolute",
+                            inset: 0,
+                            background: "linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5))",
+                            display: "flex",
+                            flexDirection: "column",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            color: "white",
+                            textAlign: "center",
+                            px: 2,
+                        }}
+                    >
 
-                <Typography variant="h6" sx={{ mt: 2, maxWidth: 600, mx: "auto" }}>
-                    Experience a comfortable stay in Ibanda, Western Uganda.
-                </Typography>
-
-                {/* <Typography variant="h6" sx={{ mt: 2 }}>
-                    Hospitality lived, not just offered
-                </Typography> */}
+                    </Box>
+                </Box>
             </Box>
         </Box>
     );
