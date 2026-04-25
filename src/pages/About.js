@@ -47,14 +47,36 @@ const About = () => {
                 </Box>
 
                 <Box sx={{ flex: 1, textAlign: "left" }}>
-                    <Typography variant="h2" fontWeight="700" sx={{ fontSize: { xs: '2.5rem', md: '4rem' }, mb: 4 }}>
-                        Welcome to Ibanda
+                    <Typography variant="h3" gutterBottom fontWeight="medium">
+                        A Warm Welcome in Ibanda
                     </Typography>
-                    <Typography variant="body1" sx={{ fontSize: { xs: '1.1rem', md: '1.4rem' }, lineHeight: 1.8, mb: 3 }}>
-                        Located in Ibanda along the Ibanda–Mbarara Highway, our hotel offers a perfect blend of comfort, style, and convenience.
+
+                    <Typography variant="body1" paragraph sx={{ lineHeight: 1.8 }}>
+                        Located in Ibanda along the Ibanda–Mbarara Highway, just as you enter
+                        town, our hotel offers a perfect blend of comfort, style, and
+                        convenience. Designed for travelers, families, and business guests,
+                        we provide a peaceful retreat where every stay feels personal and
+                        refreshing.
                     </Typography>
-                    <Typography variant="body1" sx={{ fontSize: { xs: '1.1rem', md: '1.4rem' }, lineHeight: 1.8 }}>
-                        Experience a calm and welcoming atmosphere where style meets warmth, and every guest is treated like family.
+
+                    <Typography variant="body1" paragraph sx={{ lineHeight: 1.8 }}>
+                        Choose from our beautiful cottages and fully self-contained rooms,
+                        thoughtfully designed to give you privacy, relaxation, and a true
+                        sense of home. Whether you're passing through or staying a while,
+                        you'll find the perfect space to unwind.
+                    </Typography>
+
+                    <Typography variant="body1" paragraph sx={{ lineHeight: 1.8 }}>
+                        Start each day with a complimentary breakfast and enjoy delicious
+                        meals prepared fresh daily—tasty, wholesome, and made with love.
+                        Our commitment to hospitality goes beyond service; here, it is lived
+                        and felt in every detail.
+                    </Typography>
+
+                    <Typography variant="body1" sx={{ lineHeight: 1.8 }}>
+                        Experience a calm and welcoming atmosphere where style meets warmth,
+                        and every guest is treated like family. This is more than just a
+                        place to stay—it’s a place to relax, recharge, and feel at home.
                     </Typography>
                 </Box>
             </Box>
